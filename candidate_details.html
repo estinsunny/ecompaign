@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>E-compaign</title>
+		
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		
+	</head>
+    <body>
+    	<div class="MainWrapp">
+            <div class="HeaderWrapp backgroundNone headerOther">
+            	
+                <div class="MenuWithSearch">
+                	<div class="Menu">
+                    	<img src="images/menu.png" onClick="showOptions();return false;" id="BshowOptions" />
+                    	<div class="DropDown" id="DropDown">
+                        	<div class="DropMenu">
+                            	<a href="index.html">Home</a>
+                                <a href="candidate.html">Candidate</a>
+                                <a href="news.html">News</a>
+                                <a href="pictures.html">Pictures</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search"><input type="text" placeholder="Search or browse the web" name="search" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </div>
+            
+            <div class="ContentWrapp">
+            	<div class="EventsWrapp">
+                    <div class="eventContent">
+                    	<div class="eventsHead">
+                            <img src="images/user_plus.png" /><div class="HeadTitle">Barack Obama</div>
+                            <div class="Likes"><img src="images/like.png" /><img src="images/dis_like.png" /></div>
+                            <div class="clear"></div>
+                    	</div>
+                    	<div class="Content otherPages">
+                        	<img src="images/obama.png" /><br />
+                            <div class="InnerInfo">
+                                <h4>Pictures</h4>
+                                <div class="pictures">
+                                    <a id="single_2" href="pictures.html" ><img src="images/obama1.png" /></a>
+                                    <a id="single_2" href="pictures.html" ><img src="images/obma2.png" /></a>
+                                    <a id="single_2" href="pictures.html" ><img src="images/obama3.png" /></a>
+                                    <a id="single_2" href="pictures.html" ><img src="images/obama1.png" /></a>
+                                </div>
+                                <h4>President of Us</h4>
+                                <p>President Obama was born in Honolulu, Hawaii on August 4th, 1961, to a father from Kenya and a mother from Kansas. Growing up, he was also raised by his grandfather, who served in Patton’s army, and his grandmother, who worked her way up from the secretarial pool to become vice president at a local bank.</p><br />
+                                <p>He went on to Harvard Law School, where he was elected the first African-American president of the Harvard Law Review. After graduating, President Obama went on to lead one of the most successful voter registration drives in state history, and continued his legal work as a civil rights lawyer and a professor teaching constitutional law at the University of Chicago.</p>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="BackAndMore">
+                        	<div class="back"><a href="candidate.html"><img src="images/back.png" /></a></div>
+                            <div class="more"><a href="pictures.html"><img src="images/more.png" /></a></div>
+                            <div class="clear"></div>
+                        </div>
+                    </div><!--end of .eventContent-->
+                    
+                </div>
+            
+            </div>
+            
+            <div class="FooterWrapp"></div>
+        </div>
+    </body>
+</html>
+
+
+<!--===========================  drop down begin =======================================-->
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.MainWrapp').find('div.DropDown').hide();
+ 	
+});
+function showOptions()
+{
+	$('#DropDown').fadeToggle('fast');
+	if($('#DropDown').css('display')=='block')$(window).bind('click',hideOptions);
+	return false;
+	
+}
+function hideOptions(e)
+{
+	if($(e.target).closest('#DropDown').length<1&&$(e.target).closest('#BshowOptions').length<1)
+	{
+		$('#DropDown').fadeOut('fast');$(window).unbind('click',hideOptions);
+	}
+}
+</script>
+<!--===========================  drop down end =======================================-->

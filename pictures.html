@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>E-compaign</title>
+		
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		
+	</head>
+    <body>
+    	<div class="MainWrapp">
+            <div class="HeaderWrapp backgroundNone headerOther">
+            	
+                <div class="MenuWithSearch">
+                	<div class="Menu">
+                    	<img src="images/menu.png" onClick="showOptions();return false;" id="BshowOptions" />
+                    	<div class="DropDown" id="DropDown">
+                        	<div class="DropMenu">
+                            	<a href="index.html">Home</a>
+                                <a href="candidate.html">Candidate</a>
+                                <a href="news.html">News</a>
+                                <a href="pictures.html">Pictures</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search"><input type="text" placeholder="Search or browse the web" name="search" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </div>
+            
+            <div class="ContentWrapp">
+            	<div class="EventsWrapp">
+                    <div class="eventContent">
+                    	<div class="eventsHead">
+                            <img src="images/user_plus.png" /><div class="HeadTitle">Barack Obama&nbsp;>&nbsp;Pictures</div>
+                            <div class="Likes"><img src="images/like.png" /><img src="images/dis_like.png" /></div>
+                            <div class="clear"></div>
+                    	</div>
+                    	<div class="Content otherPages">
+                        	<img src="images/obama.png" /><br />
+                            <div class="InnerInfo">
+                                <h4>Image Gallery</h4>
+                                <div class="pictures">
+                                	<a id="single_2" href="gallery.html" ><img src="images/obama1.png" /></a>
+                                    <a id="single_2" href="gallery.html" ><img src="images/obma2.png" /></a>
+                                    <a id="single_2" href="gallery.html" ><img src="images/obama3.png" /></a>
+                                    <a id="single_2" href="gallery.html" ><img src="images/obama1.png" /></a>
+                                </div>
+                                <br />
+                                <h4>Election Pictures 2012</h4>
+                                <div class="pictures">
+                                	<a id="single_2" href="gallery.html" ><img src="images/obama1.png" /></a>
+                                    <a id="single_2" href="gallery.html" ><img src="images/obma2.png" /></a>
+                                    <a id="single_2" href="gallery.html" ><img src="images/obama3.png" /></a>
+                                </div>
+                                <br />
+                                <h4>Election Campaign</h4>
+                                <div class="pictures">
+                                	<a id="single_2" href="gallery.html" ><img src="images/obama1.png" /></a>
+                                    <a id="single_2" href="gallery.html" ><img src="images/obma2.png" /></a>
+                                    <a id="single_2" href="gallery.html" ><img src="images/obama3.png" /></a>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        
+                    </div><!--end of .eventContent-->
+                    
+                </div>
+            
+            </div>
+            
+            <div class="FooterWrapp"></div>
+        </div>
+    </body>
+</html>
+
+
+<!--===========================  drop down begin =======================================-->
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.MainWrapp').find('div.DropDown').hide();
+ 	
+});
+function showOptions()
+{
+	$('#DropDown').fadeToggle('fast');
+	if($('#DropDown').css('display')=='block')$(window).bind('click',hideOptions);
+	return false;
+	
+}
+function hideOptions(e)
+{
+	if($(e.target).closest('#DropDown').length<1&&$(e.target).closest('#BshowOptions').length<1)
+	{
+		$('#DropDown').fadeOut('fast');$(window).unbind('click',hideOptions);
+	}
+}
+</script>
+<!--===========================  drop down end =======================================-->
