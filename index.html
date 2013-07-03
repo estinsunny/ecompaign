@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>E-compaign</title>
+		
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		
+	</head>
+    <body>
+    	<div class="MainWrapp">
+            <div class="HeaderWrapp">
+            	<div class="logoAndReg">
+                	<div class="logo"><img src="images/ofa4-logo-white.png"></div>
+                    <div class="LoginLinks">
+                        <a href="#">Login</a>
+                        <a href="#">Create Account</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="querts">
+                	<p>"If Congress Won't act soon to protect future generations,I will"
+                    <span>-PRESIDENT BARAKA OBAMA</span></p>
+                    <div class="clear"></div>
+                </div>
+                <div class="MenuWithSearch">
+                	<div class="Menu">
+                    	<img src="images/menu.png" onClick="showOptions();return false;" id="BshowOptions" />
+                    	<div class="DropDown" id="DropDown">
+                        	<div class="DropMenu">
+                            	<a href="index.html">Home</a>
+                                <a href="candidate.html">Candidate</a>
+                                <a href="news.html">News</a>
+                                <a href="pictures.html">Pictures</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search"><input type="text" placeholder="Search or browse the web" name="search" /></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="HeaderContent">
+                	<div class="querts">
+                        <p>"If Congress Won't act soon to protect future generations,I will"</p>
+                        <p class="textCentre">-PRESIDENT BARAKA OBAMA</p>
+                    </div>
+                    <div class="querts borderNone">
+                        <p>WILL YOU STAND WITH THE PRESIDENTR IN THE FIGHT AGAINST CLIMATE CHANGE</p>
+                        <div class="Inputs">
+                            <input type="text" placeholder="Email" name="email" />
+                            <div class="InputSecond">	
+                                <input type="text" placeholder="Zip" name="zip" class="zipWidth"/>&nbsp;
+                                <input type="button" class="submitBtn" value="I WILL"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ContentWrapp">
+            	<div class="EventsWrapp">
+                	<div class="eventsHead">
+                    	<img src="images/star.png" />&nbsp;<div class="HeadTitle">Events</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="eventContent">
+                    	<div class="Content">
+                        	<div class="contentImage"><img src="images/event_img1.png" /></div>
+                            <div class="info">We need to fix America's broken immigration system</div>
+                            <div class="date">TODAY 03/08</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="Content">
+                        	<div class="contentImage"><img src="images/event_img2.png" /></div>
+                            <div class="info">We need to fix America's broken immigration system</div>
+                            <div class="date">TODAY 03/08</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="Content">
+                        	<div class="contentImage"><img src="images/event_img3.png" /></div>
+                            <div class="info">We need to fix America's broken immigration system</div>
+                            <div class="date">TODAY 03/08</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            
+            <div class="FooterWrapp"></div>
+        </div>
+    </body>
+</html>
+
+
+<!--===========================  drop down begin =======================================-->
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.MainWrapp').find('div.DropDown').hide();
+ 	
+});
+function showOptions()
+{
+	$('#DropDown').fadeToggle('fast');
+	if($('#DropDown').css('display')=='block')$(window).bind('click',hideOptions);
+	return false;
+	
+}
+function hideOptions(e)
+{
+	if($(e.target).closest('#DropDown').length<1&&$(e.target).closest('#BshowOptions').length<1)
+	{
+		$('#DropDown').fadeOut('fast');$(window).unbind('click',hideOptions);
+	}
+}
+</script>
+<!--===========================  drop down end =======================================-->

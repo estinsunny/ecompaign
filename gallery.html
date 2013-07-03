@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>E-compaign</title>
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+        <!-- Add fancyBox main JS and CSS files -->
+		<script type="text/javascript" src="js/jquery.fancybox.js?v=2.1.5"></script>
+        <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css?v=2.1.5" media="screen" />
+	</head>
+    <body>
+    	<div class="MainWrapp">
+            <div class="HeaderWrapp backgroundNone headerOther">
+            	
+                <div class="MenuWithSearch">
+                	<div class="Menu">
+                    	<img src="images/menu.png" onClick="showOptions();return false;" id="BshowOptions" />
+                    	<div class="DropDown" id="DropDown">
+                        	<div class="DropMenu">
+                            	<a href="index.html">Home</a>
+                                <a href="candidate.html">Candidate</a>
+                                <a href="news.html">News</a>
+                                <a href="pictures.html">Pictures</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search"><input type="text" placeholder="Search or browse the web" name="search" /></div>
+                    <div class="clear"></div>
+                </div>
+                
+            </div>
+            
+            <div class="ContentWrapp">
+            	<div class="EventsWrapp">
+                    <div class="eventContent">
+                    	<div class="eventsHead">
+                            <img src="images/user_plus.png" /><div class="HeadTitle">Barack Obama&nbsp;>&nbsp;Pictures</div>
+                            <div class="Likes"><img src="images/like.png" /><img src="images/dis_like.png" /></div>
+                            <div class="clear"></div>
+                    	</div>
+                    	<div class="Content otherPages">
+                        	<img src="images/obama.png" /><br />
+                            <div class="InnerInfo">
+                                <h4>Image Gallery</h4>
+                                <div class="pictures">
+                                	<a id="single_2" href="images/obama1.png" ><img src="images/obama1.png" /></a>
+                                    <a id="single_2" href="images/obma2.png" ><img src="images/obma2.png" /></a>
+                                    <a id="single_2" href="images/obama3.png" ><img src="images/obama3.png" /></a>
+                                    <a id="single_2" href="images/obama1.png" ><img src="images/obama1.png" /></a>
+                                	
+                                </div>
+                                <div class="pictures">
+                                	<a id="single_2" href="images/obama6.png" ><img src="images/obama6.png" /></a>
+                                    <a id="single_2" href="images/obama7.png" ><img src="images/obama7.png" /></a>
+                                    <a id="single_2" href="images/obama2.png" ><img src="images/obama2.png" /></a>
+                                <div class="pictures">
+                                	<a id="single_2" href="images/obama1.png" ><img src="images/obama1.png" /></a>
+                                    <a id="single_2" href="images/obma2.png" ><img src="images/obma2.png" /></a>
+                                    <a id="single_2" href="images/obama3.png" ><img src="images/obama3.png" /></a>
+                                    <a id="single_2" href="images/obama1.png" ><img src="images/obama1.png" /></a>
+                                </div>
+                                <div class="pictures">
+                                	<a id="single_2" href="images/obama1.png" ><img src="images/obama1.png" /></a>
+                                    <a id="single_2" href="images/obma2.png" ><img src="images/obma2.png" /></a>
+                                    <a id="single_2" href="images/obama3.png" ><img src="images/obama3.png" /></a>
+                                    <a id="single_2" href="images/obama1.png" ><img src="images/obama1.png" /></a>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        
+                    </div><!--end of .eventContent-->
+                    
+                </div>
+            
+            </div>
+            
+            <div class="FooterWrapp"></div>
+        </div>
+    </body>
+</html>
+
+
+<!--===========================  drop down begin =======================================-->
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.MainWrapp').find('div.DropDown').hide();
+ 	
+});
+function showOptions()
+{
+	$('#DropDown').fadeToggle('fast');
+	if($('#DropDown').css('display')=='block')$(window).bind('click',hideOptions);
+	return false;
+	
+}
+function hideOptions(e)
+{
+	if($(e.target).closest('#DropDown').length<1&&$(e.target).closest('#BshowOptions').length<1)
+	{
+		$('#DropDown').fadeOut('fast');$(window).unbind('click',hideOptions);
+	}
+}
+</script>
+<!--===========================  drop down end =======================================-->
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#single_1").fancybox({
+          helpers: {
+              title : {
+                  type : 'float'
+              }
+          }
+      });
+
+    $("#single_2").fancybox({
+    	openEffect	: 'elastic',
+    	closeEffect	: 'elastic',
+
+    	helpers : {
+    		title : {
+    			type : 'inside'
+    		}
+    	}
+    });
+
+    $("#single_3").fancybox({
+    	openEffect : 'none',
+    	closeEffect	: 'none',
+    	helpers : {
+    		title : {
+    			type : 'outside'
+    		}
+    	}
+    });
+
+    $("#single_4").fancybox({
+    	helpers : {
+    		title : {
+    			type : 'over'
+    		}
+    	}
+    });
+});
+</script>
