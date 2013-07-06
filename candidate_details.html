@@ -5,6 +5,9 @@
 		
 		<script src="js/jquery-1.10.1.min.js"></script>
 		<link rel="stylesheet" href="css/style.css" />
+        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+        <script type="text/javascript" src="js/addthis_widget.js#pubid=ra-519a6bbe3ae028d9"></script>
+		<script type="text/javascript" src="js/jquery.bpopup.min.js"></script>
 		
 	</head>
     <body>
@@ -19,11 +22,30 @@
                             	<a href="index.html">Home</a>
                                 <a href="candidate.html">Candidate</a>
                                 <a href="news.html">News</a>
+                                <a href="blog.html">Blog</a>
+                                <a href="compaign_location.html">Campaign Locations</a>
                                 <a href="pictures.html">Pictures</a>
+                                <a href="videos.html">Videos</a>
                             </div>
                         </div>
                     </div>
-                    <div class="search"><input type="text" placeholder="Search or browse the web" name="search" /></div>
+                    <div class="header_menubar">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="candidate.html">Candidate</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="compaign_location.html">Campaign Locations</a></li>
+                            <li><a href="pictures.html">Pictures</a></li>
+                            <li><a href="videos.html">Videos</a></li>
+                        </ul>
+                    </div>
+                    <div class="search">
+                        <div class="label">Search</div>
+                        <div class="input_search">
+                            <input type="text" placeholder="Search or browse the web" name="search" />
+                        </div>
+                    </div>
                     <div class="clear"></div>
                 </div>
                 
@@ -48,9 +70,33 @@
                                     <a id="single_2" href="pictures.html" ><img src="images/obama1.png" /></a>
                                 </div>
                                 <h4>President of Us</h4>
-                                <p>President Obama was born in Honolulu, Hawaii on August 4th, 1961, to a father from Kenya and a mother from Kansas. Growing up, he was also raised by his grandfather, who served in Patton’s army, and his grandmother, who worked her way up from the secretarial pool to become vice president at a local bank.</p><br />
+                                <p>President Obama was born in Honolulu, Hawaii on August 4th, 1961, to a father from Kenya and a mother from Kansas. Growing up, he was also raised by his grandfather, who served in Patton’s army, and his grandmother, who worked her way up from the secretarial pool to become vice president at a local bank.</p>
                                 <p>He went on to Harvard Law School, where he was elected the first African-American president of the Harvard Law Review. After graduating, President Obama went on to lead one of the most successful voter registration drives in state history, and continued his legal work as a civil rights lawyer and a professor teaching constitutional law at the University of Chicago.</p>
+                                <br />
+                                <h4>Past Work</h4>
+                                <ul>
+                                	<li><a href="past_work.html">American Politics</a></li>
+                                    <li><a href="past_work.html">College Professor</a></li>
+                                    <li><a href="past_work.html">Community Organizer</a></li>
+                                    <li><a href="past_work.html">State Senator</a></li>
+                                </ul>
                                 <div class="clear"></div>
+                                <!--social shares-->
+                                <div class="likeShare">
+                                    <!-- AddThis Button BEGIN -->
+                                    <div class="addthis_toolbox addthis_default_style ">
+                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                        <a class="addthis_button_tweet"></a>
+                                        <a class="addthis_button_pinterest_pinit"></a>
+                                        <a class="addthis_counter addthis_pill_style"></a>
+                                    </div>
+                                    <div class="Reports">
+                                    	<input type="button" value="Report" class="StyleBtn" onClick="popup()">&nbsp;
+                                        <input type="button" value="Advise" class="StyleBtn" onClick="popup()">
+                                    </div>
+                                    <!-- AddThis Button END -->
+                                </div>
+                                <!--social shares-->
                             </div>
                         </div>
                         <div class="BackAndMore">
@@ -59,17 +105,47 @@
                             <div class="clear"></div>
                         </div>
                     </div><!--end of .eventContent-->
-                    
                 </div>
-            
+                <div class="PopupDiv">
+                	<div id="report">
+                        <div class="Passwd">
+                            <label><b>Name</b></label><br />
+                        </div>
+                        <input autofocus="" id="name" name="name" type="email" value="">
+                        <br /><br />
+                        <div class="Passwd">
+                            <label><b>Email</b></label><br />
+                        </div>
+                        <input autofocus="" id="email" name="email" type="email" value="">
+                        <br /><br />
+                        <div class="Passwd">
+                            <label><b>Messege</b></label><br />
+                        </div>
+                        <textarea  id="messege" name="messege" rows="5" ></textarea>
+                        <br>
+                        <input type="button" name="login" value="Send" class="StyleBtn"/>
+                    </div>
+                </div><!--end of .PopupDiv-->
+                
             </div>
-            
-            <div class="FooterWrapp"></div>
+             <div class="FooterWrapp">
+            	<div class="contentLeft">Copyright 2013 E-Compaign | All Rights Reserved</div>
+                <div class="contentRight">Powered by E-Compaign</div>
+            </div>
         </div>
     </body>
 </html>
 
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.PopupDiv').hide();
+});
+function popup()
+{
+	$('.PopupDiv').bPopup();
+}
 
+</script>
 <!--===========================  drop down begin =======================================-->
 <script type="text/javascript">
 $(document).ready(function() {
